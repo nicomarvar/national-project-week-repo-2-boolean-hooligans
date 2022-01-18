@@ -5,7 +5,7 @@ const sqlQuery = `CREATE TABLE IF NOT EXISTS test (
     test TEXT
 );`
 
-function createTable(){
+async function createTable(){
     const res = await query(sqlQuery)
     console.log("Table Created", res);
 }
