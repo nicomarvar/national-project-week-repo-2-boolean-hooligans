@@ -2,7 +2,7 @@ import query from "../index.js";
 
 const sqlQuery = `CREATE TABLE IF NOT EXISTS test (
     testID SERIAL PRIMARY KEY,
-    test TEXT
+    testname TEXT
 );`
 
 async function createTable(){
