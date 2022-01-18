@@ -1,4 +1,4 @@
-// import query from "../db/index.js";
+import query from "../db/index.js";
 
 export async function getAllWeeks() {
   const data = await query(`SELECT * FROM weeks;`);
@@ -19,3 +19,9 @@ export async function createResource(id) {
   ]);
   return data.rows;
 }
+// deleteResourceByTopicId(id){
+//     const data = await query(`INSERT INTO resources FROM topics WHERE id=$1`, [
+//         id,
+//       ]);
+//       return data.rows;
+// };

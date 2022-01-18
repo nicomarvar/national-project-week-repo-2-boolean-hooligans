@@ -32,11 +32,17 @@ Router.get("days/:id", async function (req, res) {
   res.json({ success: true, message: `found the day`, payload: day });
 });
 
-// PUT Week by day/id
+// PUT create new resource
 
 Router.post("days/:id", async function (req, res) {
   const resource = await createResource(req.body);
   res.json({ success: true, payload: resource });
 });
+
+//DELETE new resource
+// Router.delete("/days/:id", async function (req, res) {
+//   const resource = await deleteResourceByTopicId(Number(req.params.id));
+//   res.json({ success: true, payload: resource });
+// });
 
 export default Router;
