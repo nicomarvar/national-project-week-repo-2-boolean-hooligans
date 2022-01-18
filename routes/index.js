@@ -14,20 +14,20 @@ Router.get("/", async (req, res) => {
   let weeks = await getAllWeeks();
   res.json({ success: true, message: `found all the weeks`, payload: weeks });
 });
-// GET A Week by ID
-Router.get("weeks/:id", async function (req, res) {
-  // get all the week by id
 
-  const { id } = req.params;
-  const week = await getWeekById(id);
+// GET A Week by ID
+Router.get("/weeks/:id", async function (req, res) {
+  // get all the week by id
+  const week = await getWeekById(req.params.id);
   //  respond with.. everytime
   res.json({ success: true, message: `found the week`, payload: week });
 });
 //GET Day by id and Week by ID
-Router.get("days/:id", async function (req, res) {
+Router.get("/days/:id", async function (req, res) {
   // get the day by id
   const { id } = req.params;
   const day = await getDayById(id);
+
   //  respond with.. everytime
   res.json({ success: true, message: `found the day`, payload: day });
 });

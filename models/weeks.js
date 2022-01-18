@@ -6,11 +6,11 @@ export async function getAllWeeks() {
 }
 
 export async function getWeekById(id) {
-  const data = await query(`SELECT * FROM weeks WHERE id = $1;`, [id]);
+  const data = await query(`SELECT * FROM weeks WHERE id = $1;`[id]);
   return data.rows;
 }
 export async function getDayById(id) {
-  const data = await query(`SELECT * FROM days WHERE id = $1;`, [id]);
+  const data = await query(`SELECT * FROM days WHERE id = $1;`[id]);
   return data.rows;
 }
 export async function createResource(id) {
