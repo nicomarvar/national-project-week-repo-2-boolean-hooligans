@@ -1,5 +1,5 @@
 import express from "express";
-const Router = express.Router();
+export const Router = express.Router();
 
 /* GET home page. */
 Router.get("/", function (req, res, next) {
