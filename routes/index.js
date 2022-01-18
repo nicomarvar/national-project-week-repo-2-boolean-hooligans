@@ -1,5 +1,6 @@
 import express from "express";
 
+
 const Router = express.Router();
 // import models functions
 import {
@@ -33,6 +34,9 @@ Router.get("days/:id", async function (req, res) {
 });
 
 // PUT Week by day/id
+=======
+export const Router = express.Router();
+
 
 Router.post("days/:id", async function (req, res) {
   const resource = await createResource(req.body);
