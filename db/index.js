@@ -1,6 +1,6 @@
 import pg from "pg"
 
-import { dbcredentials } from "../config"
+import { dbcredentials } from "../config.js"
 
 const pool = new pg.Pool({
     user: dbcredentials.user,
