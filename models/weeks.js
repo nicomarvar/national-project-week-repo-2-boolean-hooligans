@@ -14,7 +14,7 @@ export async function getDayById(id) {
   return data.rows;
 }
 export async function createResource(id) {
-  const data = await query(`INSERT INTO resources FROM topics WHERE id=$1`, [
+  const data = await query(`INSERT INTO resources FROM topicid WHERE id=$1`, [
     id,
   ]);
   return data.rows;
