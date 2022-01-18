@@ -1,6 +1,6 @@
 import query from "../index.js";
 
-const sqlQuery = `DROP TABLE  test;`
+const sqlQuery = `DROP TABLE  topics;`
 
 async function deleteTable(){
     const res = await query(sqlQuery)
