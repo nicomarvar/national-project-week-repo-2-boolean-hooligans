@@ -6,8 +6,8 @@ export async function getAllWeeks() {
 }
 
 export async function getWeekById(id) {
-  const weekid = Number(id);
-  const data = await query(`SELECT * FROM weeks WHERE weekid = $1;`[weekid]);
+  const Weekid = Number(id);
+  const data = await query(`SELECT * FROM test WHERE Weekid = $1;`[Weekid]);
   return data.rows;
 }
 export async function getDayById(id) {
