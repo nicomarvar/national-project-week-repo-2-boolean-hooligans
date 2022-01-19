@@ -31,7 +31,7 @@ Router.get("/days/:id", async function (req, res) {
   res.json({ success: true, message: `found the day`, payload: day });
 });
 //  Get new resource
-Router.get("/days/:id", async function (req, res) {
+Router.get("/topics/:id", async function (req, res) {
   // get the day by id
 
   const resource = await getResourceById(req.params.id);

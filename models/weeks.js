@@ -6,20 +6,20 @@ export async function getAllWeeks() {
 }
 
 export async function getWeekById(id) {
-  const Weekid = Number(id);
-  const data = await query(`SELECT * FROM test WHERE Weekid = $1;`[Weekid]);
+  const data = await query(`SELECT * FROM weeks WHERE Weekid = $1;`, [id]);
   return data.rows;
 }
+
 export async function getDayById(id) {
-  const data = await query(`SELECT * FROM days WHERE Daysid = $1;`[id]);
+  const data = await query(`SELECT * FROM days WHERE Dayid = $1;`, [id]);
   return data.rows;
 }
 export async function getResourceById(id) {
-  const data = await query(`SELECT * FROM days WHERE Daysid = $1;`[id]);
+  const data = await query(`SELECT * FROM topics WHERE Topicid = $1;`, [id]);
   return data.rows;
 }
 
 export async function createResource(id) {
-  const data = await query(`SELECT * FROM Resources WHERE Topicid = $1;`[id]);
+  const data = await query(`SELECT * FROM topics WHERE Topicid = $1;`, [id]);
   return data.rows;
 }
