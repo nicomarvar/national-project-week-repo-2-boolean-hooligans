@@ -35,16 +35,16 @@ Router.get("/topics/:id", async function (req, res) {
   // get the day by id
 
   const resource = await getResourceById(req.params.id);
-
   //  respond with.. everytime
-  res.json({ success: true, message: `found the day`, payload: resource });
+  res.json({ success: true, message: `found the topic`, payload: resource });
 });
 
 // PUT create new resource
 
-Router.post("/topics/:id", async function (req, res) {
-  const resource = await createResource(req.body);
-  res.json({ success: true, payload: resource });
+Router.patch("/topics/:id", async function (req, res) {
+  const resource = await createResource(req.body, req.params.id);
+
+  res.json({ success: true, message: `found the topic`, payload: resource });
 });
 
 export default Router;

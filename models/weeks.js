@@ -19,7 +19,10 @@ export async function getResourceById(id) {
   return data.rows;
 }
 
-export async function createResource(id) {
-  const data = await query(`SELECT * FROM topics WHERE Topicid = $1;`, [id]);
+export async function createResource(body, id) {
+  const data = await query(
+    `UPDATE topics SET resources= $1 WHERE Topicid = $2 RETURNING *;`,
+    [body.resources, id]
+  );
   return data.rows;
 }
