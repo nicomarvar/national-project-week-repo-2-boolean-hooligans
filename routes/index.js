@@ -8,6 +8,7 @@ import {
   getDayById,
   getResourceById,
   createResource,
+  getAllTopics,
 } from "../models/weeks.js";
 
 //GET All the weeks/home page
@@ -45,6 +46,12 @@ Router.patch("/topics/:id", async function (req, res) {
   const resource = await createResource(req.body, req.params.id);
 
   res.json({ success: true, message: `found the topic`, payload: resource });
+});
+
+// GET all the topics
+Router.get("/topics", async function (req, res) {
+  const topics = await getAllTopics();
+  res.json({ success: true, message: `found the topic`, payload: topics });
 });
 
 export default Router;

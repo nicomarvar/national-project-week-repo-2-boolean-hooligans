@@ -26,3 +26,8 @@ export async function createResource(body, id) {
   );
   return data.rows;
 }
+
+export async function getAllTopics() {
+  const data = await query(`SELECT * FROM topics;`);
+  return data.rows;
+}
