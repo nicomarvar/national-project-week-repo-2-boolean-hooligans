@@ -10,7 +10,7 @@ const app = express();
 // const PORT = 3000;
 
 // view engine setup
-app.use(cors())
+app.use(cors());
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));

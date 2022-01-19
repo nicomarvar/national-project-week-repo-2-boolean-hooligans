@@ -21,7 +21,7 @@ export async function getResourceById(id) {
 
 export async function createResource(body, id) {
   const data = await query(
-    `UPDATE topics SET resources= $1 WHERE Topicid = $2 RETURNING *;`,
+    `UPDATE topics SET resources= resources + $1 WHERE Topicid = $2 RETURNING *;`,
     [body.resources, id]
   );
   return data.rows;
