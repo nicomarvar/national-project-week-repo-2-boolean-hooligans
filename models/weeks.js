@@ -13,16 +13,12 @@ export async function getDayById(id) {
   const data = await query(`SELECT * FROM days WHERE Daysid = $1;`[id]);
   return data.rows;
 }
-export async function createResource(id) {
-  const data = await query(
-    `INSERT INTO resources FROM Topicid WHERE Weekid=$1`,
-    [id]
-  );
+export async function getResourceById(id) {
+  const data = await query(`SELECT * FROM days WHERE Daysid = $1;`[id]);
   return data.rows;
 }
-// deleteResourceByTopicId(id){
-//     const data = await query(`INSERT INTO resources FROM topics WHERE id=$1`, [
-//         id,
-//       ]);
-//       return data.rows;
-// };
+
+export async function createResource(id) {
+  const data = await query(`SELECT * FROM Resources WHERE Topicid = $1;`[id]);
+  return data.rows;
+}
