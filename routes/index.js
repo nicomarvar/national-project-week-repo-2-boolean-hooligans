@@ -42,7 +42,7 @@ Router.get("/topics/:id", async function (req, res) {
 
 // PUT create new resource
 
-Router.post("days/:id", async function (req, res) {
+Router.post("/topics/:id", async function (req, res) {
   const resource = await createResource(req.body);
   res.json({ success: true, payload: resource });
 });
