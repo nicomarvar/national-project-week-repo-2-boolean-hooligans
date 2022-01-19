@@ -6,6 +6,7 @@ import {
   getAllWeeks,
   getWeekById,
   getDayById,
+  getResourceById,
   createResource,
 } from "../models/weeks.js";
 
@@ -27,9 +28,16 @@ Router.get("/days/:id", async function (req, res) {
   // get the day by id
   const { id } = req.params;
   const day = await getDayById(id);
+  res.json({ success: true, message: `found the day`, payload: day });
+});
+//  Get new resource
+Router.get("/days/:id", async function (req, res) {
+  // get the day by id
+  const { id } = req.params;
+  const resource = await getResourceById(id);
 
   //  respond with.. everytime
-  res.json({ success: true, message: `found the day`, payload: day });
+  res.json({ success: true, message: `found the day`, payload: resource });
 });
 
 // PUT create new resource
@@ -38,11 +46,5 @@ Router.post("days/:id", async function (req, res) {
   const resource = await createResource(req.body);
   res.json({ success: true, payload: resource });
 });
-
-//DELETE new resource
-// Router.delete("/days/:id", async function (req, res) {
-//   const resource = await deleteResourceByTopicId(Number(req.params.id));
-//   res.json({ success: true, payload: resource });
-// });
 
 export default Router;
