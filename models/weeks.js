@@ -10,13 +10,14 @@ export async function getWeekById(id) {
   return data.rows;
 }
 export async function getDayById(id) {
-  const data = await query(`SELECT * FROM days WHERE id = $1;`[id]);
+  const data = await query(`SELECT * FROM days WHERE Daysid = $1;`[id]);
   return data.rows;
 }
 export async function createResource(id) {
-  const data = await query(`INSERT INTO resources FROM topicid WHERE id=$1`, [
-    id,
-  ]);
+  const data = await query(
+    `INSERT INTO resources FROM Topicid WHERE Weekid=$1`,
+    [id]
+  );
   return data.rows;
 }
 // deleteResourceByTopicId(id){
