@@ -9,6 +9,9 @@ import {
   getResourceById,
   createResource,
   getAllTopics,
+  getAllSubjects,
+  getSubjectById,
+  createSubjectLink
 } from "../models/weeks.js";
 
 //GET All the weeks/home page
@@ -54,4 +57,26 @@ Router.get("/topics", async function (req, res) {
   res.json({ success: true, message: `found the topic`, payload: topics });
 });
 
+// GET all the subjects
+Router.get("/subjects", async function (req, res) {
+    const subjects = await getAllSubjects();
+    res.json({ success: true, message: `found the topic`, payload: subjects });
+  });
+
+  // get the subject by id
+Router.get("/subjects/:id", async function (req, res) {
+  const subject = await getSubjectById(req.params.id);
+  //  respond with.. everytime
+  res.json({ success: true, message: `found the topic`, payload: subject });
+});
+
+// PUT create new resource
+
+Router.patch("/subjects/:id", async function (req, res) {
+    const link = await createSubjectLink(req.body, req.params.id);
+  
+    res.json({ success: true, message: `found the topic`, payload: link });
+  });
+
 export default Router;
+

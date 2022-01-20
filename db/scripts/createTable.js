@@ -1,9 +1,9 @@
 import query from "../index.js";
 
-const sqlQuery = `CREATE TABLE IF NOT EXISTS topics (
-    TopicID SERIAL PRIMARY KEY,
-    Topicname TEXT,
-    Resources TEXT
+const sqlQuery = `CREATE TABLE IF NOT EXISTS subjects (
+    SubjectID SERIAL PRIMARY KEY,
+    Subjectname TEXT,
+    Links TEXT[]
 );`
 
 async function createTable(){
