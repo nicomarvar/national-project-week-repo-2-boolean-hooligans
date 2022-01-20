@@ -31,3 +31,21 @@ export async function getAllTopics() {
   const data = await query(`SELECT * FROM topics;`);
   return data.rows;
 }
+
+export async function getAllSubjects() {
+    const data = await query(`SELECT * FROM subjects;`);
+    return data.rows;
+  }
+
+export async function getSubjectById(id) {
+    const data = await query(`SELECT * FROM subjects WHERE Subjectid = $1;`, [id]);
+    return data.rows;
+  }
+
+  export async function createSubjectLink(body, id) {
+    const data = await query(
+      `UPDATE subjects SET links = array_append(links, $1) WHERE Subjectid = $2 RETURNING *;`,
+      [body.resources, id]
+    );
+    return data.rows;
+  }
