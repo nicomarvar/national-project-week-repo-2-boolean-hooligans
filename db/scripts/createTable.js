@@ -1,7 +1,7 @@
 import query from "../index.js";
 
 const sqlQuery = `CREATE TABLE IF NOT EXISTS subjects (
-    SubjectID SERIAL PRIMARY KEY,
+    SubjectID INT,
     Subjectname TEXT,
     Links TEXT[]
 );`
