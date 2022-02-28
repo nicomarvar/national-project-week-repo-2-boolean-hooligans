@@ -4,6 +4,7 @@ import { dbcredentials } from "../config.js";
 const connectionString = dbcredentials.url
 
 const pool = new pg.Pool({
+    connectionTimeoutMillis: 15000,
     user: dbcredentials.user,
     host: dbcredentials.host,
     database: dbcredentials.database,
