@@ -4,4 +4,5 @@ export const dbcredentials = {
   database: process.env.DB_DATABASE,
   passwrod: process.env.DB_PASSWORD,
   port: process.env.DB_PORT,
+  url:process.env.DATABASE_URL
 };
