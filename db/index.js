@@ -4,12 +4,13 @@ import { dbcredentials } from "../config.js";
 const connectionString = dbcredentials.url
 
 const pool = new pg.Pool({
-//   user: dbcredentials.user,
-//   host: dbcredentials.host,
-//   database: dbcredentials.database,
-//   password: dbcredentials.passwrod,
-//   port: dbcredentials.port,
-    connectionString
+    user: dbcredentials.user,
+    host: dbcredentials.host,
+    database: dbcredentials.database,
+    password: dbcredentials.passwrod,
+    port: dbcredentials.port,
+    connectionString,
+  ssl: { rejectUnauthorized: false },
 });
 
 export default function query(text, params) {
