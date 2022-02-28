@@ -9,8 +9,7 @@ const pool = new pg.Pool({
 //   database: dbcredentials.database,
 //   password: dbcredentials.passwrod,
 //   port: dbcredentials.port,
-    connectionString,
-  ssl: { rejectUnauthorized: false },
+    connectionString
 });
 
 export default function query(text, params) {
