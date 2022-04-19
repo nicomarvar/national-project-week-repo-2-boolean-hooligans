@@ -1,4 +1,4 @@
-Check it out [here](https://boolean-hooligans.herokuapp.com/)<br>
+Our first fullstack project.Check it out [here](https://boolean-hooligans.herokuapp.com/)<br>
 -or-<br>
 Routes:<br>
 Main ["/"](https://boolean-hooligans.herokuapp.com/)<br>
